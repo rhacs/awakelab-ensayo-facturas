@@ -11,8 +11,6 @@
     <packaging>war</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>Pequeña y precisa descrición del proyecto</description>
-    <url>http://github.com/usuario/proyecto</url>
 
     <!-- Propiedades -->
     <properties>
