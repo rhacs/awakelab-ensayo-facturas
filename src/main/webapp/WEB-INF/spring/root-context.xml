@@ -18,10 +18,10 @@
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
 
         <!-- Nombre de Usuario -->
-        <property name="username" value="system" />
+        <property name="username" value="certificacion" />
 
         <!-- Contraseña de Acceso -->
-        <property name="password" value="root" />
+        <property name="password" value="wBrf34jEq8AUjGLNSRuNVPKhuzF1yb" />
     </bean>
 
     <!-- Configuración de JPA -->
@@ -43,9 +43,6 @@
             <props>
                 <!-- Dialecto > https://docs.jboss.org/hibernate/core/3.6/reference/en-US/html/session-configuration.html -->
                 <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-
-                <!-- Generación de tablas > https://docs.jboss.org/hibernate/orm/5.2/userguide/html_single/Hibernate_User_Guide.html#configurations-hbmddl -->
-                <prop key="hibernate.hbm2ddl.auto">update</prop>
 
                 <!-- Mostrar consultas SQL (depuración) -->
                 <prop key="hibernate.show_sql">true</prop>
