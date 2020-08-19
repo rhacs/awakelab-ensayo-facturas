@@ -22,7 +22,7 @@ public class DetalleFactura {
     @EmbeddedId
     private DetalleFacturaCK id;
 
-    @Column(columnDefinition = "NUMBER", nullable = false)
+    @Column(nullable = false)
     private Long cantidad;
 
     @ManyToOne

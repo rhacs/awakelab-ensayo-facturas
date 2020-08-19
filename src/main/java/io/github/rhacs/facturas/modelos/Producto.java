@@ -22,13 +22,13 @@ public class Producto {
     // -----------------------------------------------------------------------------------------
 
     @Id
-    @Column(name = "productoid", columnDefinition = "NUMBER", nullable = false, unique = true, updatable = false)
+    @Column(name = "productoid", nullable = false, unique = true, updatable = false)
     private Long id;
 
-    @Column(columnDefinition = "VARCHAR(30)", nullable = false)
+    @Column(nullable = false)
     private String nombre;
 
-    @Column(columnDefinition = "NUMBER", nullable = false)
+    @Column(nullable = false)
     private Long valor;
 
     @ManyToOne

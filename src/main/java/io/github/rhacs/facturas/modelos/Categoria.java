@@ -20,10 +20,10 @@ public class Categoria {
     // -----------------------------------------------------------------------------------------
 
     @Id
-    @Column(name = "categoriaid", columnDefinition = "NUMBER NOT NULL", nullable = false, unique = true, updatable = false)
+    @Column(name = "categoriaid", nullable = false, unique = true, updatable = false)
     private Long id;
 
-    @Column(name = "VARCHAR(50)", nullable = false)
+    @Column(nullable = false)
     private String nombre;
 
     @OneToMany(mappedBy = "categoria")

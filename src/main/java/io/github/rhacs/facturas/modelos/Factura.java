@@ -20,13 +20,13 @@ public class Factura {
     // -----------------------------------------------------------------------------------------
 
     @Id
-    @Column(name = "facturaid", nullable = false, unique = true, updatable = false, columnDefinition = "NUMBER NOT NULL")
+    @Column(name = "facturaid", nullable = false, unique = true, updatable = false)
     private Long id;
 
-    @Column(columnDefinition = "VARCHAR(50)", nullable = false)
+    @Column(nullable = false)
     private String cliente;
 
-    @Column(columnDefinition = "VARCHAR(10)", nullable = false)
+    @Column(nullable = false)
     private String fecha;
 
     @OneToMany(mappedBy = "factura")
