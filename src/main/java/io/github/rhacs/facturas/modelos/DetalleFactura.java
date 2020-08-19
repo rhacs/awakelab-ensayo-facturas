@@ -5,6 +5,7 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
@@ -25,12 +26,12 @@ public class DetalleFactura {
     @Column(nullable = false)
     private Long cantidad;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId(value = "facturaid")
     @JoinColumn(name = "facturaid")
     private Factura factura;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @MapsId(value = "productoid")
     @JoinColumn(name = "productoid")
     private Producto producto;

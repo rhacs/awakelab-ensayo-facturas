@@ -6,11 +6,15 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.github.rhacs.facturas.Constantes;
 
@@ -31,11 +35,13 @@ public class Producto {
     @Column(nullable = false)
     private Long valor;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoriaid", nullable = false)
     private Categoria categoria;
 
-    @OneToMany(mappedBy = "producto")
+    @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @Transient
     private Set<DetalleFactura> detalleFacturas;
 
     // Constructores
@@ -164,8 +170,7 @@ public class Producto {
 
     @Override
     public String toString() {
-        return String.format("Producto [id=%s, nombre=%s, valor=%s, categoria=%s, detalleFacturas=%s]", id, nombre,
-                valor, categoria, detalleFacturas);
+        return String.format("Producto [id=%s, nombre=%s, valor=%s]", id, nombre, valor);
     }
 
 }

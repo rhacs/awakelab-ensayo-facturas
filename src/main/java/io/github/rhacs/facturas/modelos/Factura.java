@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -29,7 +30,7 @@ public class Factura {
     @Column(nullable = false)
     private String fecha;
 
-    @OneToMany(mappedBy = "factura")
+    @OneToMany(mappedBy = "factura", fetch = FetchType.EAGER)
     private Set<DetalleFactura> detalleFacturas;
 
     // Constructores

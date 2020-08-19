@@ -6,9 +6,13 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.github.rhacs.facturas.Constantes;
 
@@ -26,7 +30,9 @@ public class Categoria {
     @Column(nullable = false)
     private String nombre;
 
-    @OneToMany(mappedBy = "categoria")
+    @OneToMany(mappedBy = "categoria", fetch = FetchType.EAGER)
+    @JsonIgnore
+    @Transient
     private Set<Producto> productos;
 
     // Constructores
