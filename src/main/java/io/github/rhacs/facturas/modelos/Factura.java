@@ -58,6 +58,36 @@ public class Factura {
         this.detalleFacturas = detalleFacturas;
     }
 
+    // Métodos
+    // -----------------------------------------------------------------------------------------
+
+    /**
+     * @return el subtotal de la {@link Factura}
+     */
+    public Long getSubtotal() {
+        Long subtotal = 0L;
+
+        for (DetalleFactura d : detalleFacturas) {
+            subtotal += d.getCantidad() * d.getProducto().getValor();
+        }
+
+        return subtotal;
+    }
+
+    /**
+     * @return el impuesto (IVA) a cancelar
+     */
+    public Long getImpuesto() {
+        return (long) (getSubtotal() * 0.19);
+    }
+
+    /**
+     * @return el total, incluido el IVA, de la {@link Factura}
+     */
+    public Long getTotal() {
+        return (long) (getSubtotal() * 1.19);
+    }
+
     // Getters
     // -----------------------------------------------------------------------------------------
 
