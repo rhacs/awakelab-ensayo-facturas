@@ -3,6 +3,8 @@
 ## Problema
 Un negocio de ventas mayoristas posee una base de datos que almacena cada una de las facturas que se emiten, la fecha en que esto se hace, y los productos que se asocian a cada una.
 
+![Diagrama Lógico](images/diagram.logical.png)
+
 Se debe crear un portal web compuesto por dos secciones:
 
  * Búsqueda de factura por ID: se debe considerar una caja de texto y un botón; al presionar el botón se desplegará en la parte inferior de la página o en una página adicional el detalle de la factura (nombre de cliente y fecha), el listado de productos dentro de una tabla, el subtotal, el monto de impuesto y el total. Considere que el impuesto a aplicar asciende como de costumbre a un 19% del total de la compra.
